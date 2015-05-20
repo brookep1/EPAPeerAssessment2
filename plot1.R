@@ -7,7 +7,7 @@ SCC <- readRDS("../../data/exdata_data_NEI_data/Source_Classification_Code.rds")
 byYear <- summaryBy(Emissions ~ year, data = NEI, FUN=c(length,mean,median,sum,sd))
 
 #png("plot1.png")
-windows(9,11,pointsize=1/100,bg="white")
+windows(11,9,pointsize=1/100,bg="white")
 par(mfrow = c(2, 1))
 
 # Do a quick histogram to sanity check the data
