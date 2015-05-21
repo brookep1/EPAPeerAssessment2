@@ -14,11 +14,11 @@ q <- ggplot(aes(x=log10(Emissions), colour=type, group=type), data=with(NEI,NEI[
 q <- q + geom_density(fill=NA)
 q <- q + ggtitle("Distribution of Emissions for Baltimore by type")
 
-p <- ggplot(data=byYearTypeBalt, aes(x=year, y=Emissions.sum, group=type))
+p <- ggplot(data=byYearTypeBalt, aes(x=year, y=log10(Emissions.sum), group=type))
 p <- p + geom_line(aes(colour = type))
 p <- p + ggtitle("Emissions by year and type for Baltimore City")
 p <- p + xlab("Year")
-p <- p + ylab("PM2.5 Emission in Tons")
+p <- p + ylab("PM2.5 Emission in Tons (log10)")
 p
 
 r <- arrangeGrob(q,p)
